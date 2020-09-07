@@ -19,9 +19,9 @@ pipeline {
                 
          stage('Upload to AWS') {
               steps {
-                  withAWS(region:'EU',credentials:'gamasy1') {
+                  withAWS(region:'us-west-2',credentials:'gamasy1') {
                   sh 'echo "Uploading content"'
-                      s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'index.html', bucket:'jenkins-pipeline-pro3')
+                      s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'index.html', bucket:'pro3udacity')
                   }
               }
          }
